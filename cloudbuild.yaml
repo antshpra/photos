@@ -2,10 +2,10 @@ steps:
 
 # Build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/antshpra/photostructure:$COMMIT_SHA', '.']
+  args: ['build', '-t', 'gcr.io/zero65/photostructure:$COMMIT_SHA', '.']
 # Push the image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/antshpra/photostructure:$COMMIT_SHA']
+  args: ['push', 'gcr.io/zero65/photostructure:$COMMIT_SHA']
 # Deploy image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
   args:
@@ -13,7 +13,7 @@ steps:
   - 'deploy'
   - 'photostructure'
   - '--image'
-  - 'gcr.io/antshpra/photostructure:$COMMIT_SHA'
+  - 'gcr.io/zero65/photostructure:$COMMIT_SHA'
   - '--region'
   - 'asia-south1'
   - '--platform'
