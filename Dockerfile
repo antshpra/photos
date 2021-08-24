@@ -1,0 +1,1 @@
+FROM photostructure/server:stable
